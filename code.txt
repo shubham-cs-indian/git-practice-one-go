@@ -1,0 +1,32 @@
+     User :- shubham.dongre@contentserv.com
+     p/w:- Td5orAIDcu
+	 
+    ###### How to clear RDBMS data #####
+    sudo -u postgres psql
+postgres=# \l
+postgres=# DROP DATABASE camundadb ;
+root@qa-6:/etc/postgresql# sudo -u postgres createuser admin
+createuser: creation of new role failed: ERROR:  role "admin" already exists
+root@qa-6:/etc/postgresql# sudo -u postgres createdb camundadb
+root@qa-6:/etc/postgresql#  sudo -u postgres psql
+postgres=# alter user admin with encrypted password 'pass@123';
+postgres=# grant all privileges on database camundadb to admin ;
+postgres=# ALTER USER admin WITH SUPERUSER ;
+postgres=# \q
+root@qa-6:/etc/postgresql# sudo -u postgres psql camundadb < file path  (engine.sql & identity.sql)
+Run below two files. {This files should be present in /home/cs of your system}
+sudo -u postgres psql camundadb < engine.sql
+sudo -u postgres psql camundadb < identity.sql
+
+   ###### Steps to be done while changing war-name in Jenkins #####          
+Firstly , login into Jenkins-Server using Jump-Server
+cd .jenkins/workspace/135.90-docs/
+ls
+mv 135.90-docs.prop 135.90-pxp-go.prop
+cd ../
+ls
+mv 135.90-docs 135.90-pxp-go
+cd 135.90-pxp-go/
+ls
+vim 135.90-pxp-go.prop (change the war-name and ports)    
+
