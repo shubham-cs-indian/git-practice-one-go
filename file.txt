@@ -1,0 +1,14 @@
+### How to clone a System ###
+
+1> Login to Keyweb Vcenter Server . ( Credentials are in sheet )
+2> Go on the a paticular hypervisor ( Remove from inventory )
+3> Now , add host (Hypervisor) where the VM is to be created .
+4> Once , connected to hypervisor , drop down the arrow .
+5> Select the host of which the cloning is to be done . Compelete the process by selecting appropriate options.
+6> Wait for successful completion of process .
+7> Select the created VM . Disconnect the network card and reconnect the network2 card .
+8> Copy the MAC address from network drop-down and ask for IP address.
+
+9> create a CS-refactored folder in buildserver. 
+10> login to new created system .
+11> change the Ip's in pg_hba.conf , postgresql.conf , zoo.cfg , elasticsearch.yml , zookeeper.properties , server.xml , databaseProperties files
