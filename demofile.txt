@@ -1,0 +1,25 @@
+######### EC2 ###########
+
+resource "aws_instance" "tf-ec2" {
+  ami = "ami-08ee6644906ff4d6c"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "tf-ec2"
+  }
+}
+----------------------------------------------------------------------------------------------
+######## VPC ##############
+provider "aws" {
+  region     = "ap-south-1"
+  access_key = ""
+  secret_key = ""
+}
+resource "aws_vpc" "tf-vpc" {
+  cidr_block = "10.0.0.0/16"
+
+  tags = {
+    Name = "tf-vpc"
+  }
+}
+######################################
